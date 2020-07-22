@@ -3,9 +3,17 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
-    # Your code here
+    # make a new array
+        # for each item in range of array
+    prod = []
 
-    pass
+    for i in range(0, len(arr)): # moves the  compared index each time the nested for loop iterates through the array
+        item = 1 #setting variable to be multiplied
+        for j in range(0, len(arr)): #moves through the array, once it does, the i index is i+1 in the parent for loop
+            if (j != i): # compares the i index with j to to determine if they do not equal eachother, then do the thing below it.
+                item = item * arr[j] # multiply 1 by the index J
+        prod.append(item)# append the multiplied item to the new array
+    return prod
 
 
 if __name__ == '__main__':
