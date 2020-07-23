@@ -4,8 +4,27 @@ Returns: an integer
 '''
 def single_number(arr):
     # Your code here
+    #figure out a way to iterate through given array
+    # figure out a way to filter out duplicate numbers
 
-    pass
+        #if the number exist once in the array
+            #then display that number
+        #else return
+        
+    # for i in arr:
+    #     if arr.count(i) == 1:
+    #         return i
+
+
+    counts = {}
+    for num in arr: # O(n)
+        if num not in counts:
+            counts[num] = 1
+        else:
+            counts[num] += 1
+    for k, v in counts.items(): # O(n)
+        if v == 1:
+            return k
 
 
 if __name__ == '__main__':
