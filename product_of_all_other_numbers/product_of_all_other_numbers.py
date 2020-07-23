@@ -2,18 +2,23 @@
 Input: a List of integers
 Returns: a List of integers
 '''
+import math
 def product_of_all_other_numbers(arr):
     # make a new array
         # for each item in range of array
-    prod = []
 
-    for i in range(0, len(arr)): # moves the  compared index each time the nested for loop iterates through the array
-        item = 1 #setting variable to be multiplied
-        for j in range(0, len(arr)): #moves through the array, once it does, the i index is i+1 in the parent for loop
-            if (j != i): # compares the i index with j to to determine if they do not equal eachother, then do the thing below it.
-                item = item * arr[j] # multiply 1 by the index J
-        prod.append(item)# append the multiplied item to the new array
-    return prod
+    t = []
+    for i in range(len(arr)):
+        t.append(math.prod(arr[:i] + arr[i+1:]))
+    # prod = []
+    return t
+    # for i in range(0, len(arr)): # moves the  compared index each time the nested for loop iterates through the array
+    #     item = 1 #setting variable to be multiplied
+    #     for j in range(0, len(arr)): #moves through the array, once it does, the i index is i+1 in the parent for loop
+    #         if (j != i): # compares the i index with j to to determine if they do not equal eachother, then do the thing below it.
+    #             item = item * arr[j] # multiply 1 by the index J
+    #     prod.append(item)# append the multiplied item to the new array
+    # return prod
 
 
 if __name__ == '__main__':

@@ -10,9 +10,21 @@ def single_number(arr):
         #if the number exist once in the array
             #then display that number
         #else return
-    for i in arr:
-        if arr.count(i) == 1:
-            return i
+        
+    # for i in arr:
+    #     if arr.count(i) == 1:
+    #         return i
+
+
+    counts = {}
+    for num in arr: # O(n)
+        if num not in counts:
+            counts[num] = 1
+        else:
+            counts[num] += 1
+    for k, v in counts.items(): # O(n)
+        if v == 1:
+            return k
 
 
 if __name__ == '__main__':
